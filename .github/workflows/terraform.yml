@@ -40,7 +40,7 @@ jobs:
         with:
            projectBaseDir: aws-secure-s3
            args: >
-             -Dsonar.organization=night12pm-sonar-org
-             -Dsonar.projectKey=night12pm-sonar-key 
+             -Dsonar.organization=ScorpionKing-sonar
+             -Dsonar.projectKey=scorpionking-key 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
