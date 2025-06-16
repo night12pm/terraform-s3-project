@@ -39,7 +39,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           projectBaseDir: aws-secure-s3
-          organization: scorpionking-sonar
-          projectKey: terraform-s3-project
+          args: >
+            -Dsonar.organization=scorpionking-sonar
+            -Dsonar.projectKey=terraform-s3-project
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
