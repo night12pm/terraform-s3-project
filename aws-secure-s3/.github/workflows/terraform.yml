@@ -1,0 +1,37 @@
+name: Terraform CI with SonarQube
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  terraform-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: aws-secure-s3
+
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: aws-secure-s3
+
+      - name: Terraform Plan
+        run: terraform plan
+        working-directory: aws-secure-s3
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          projectBaseDir: aws-secure-s3
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
