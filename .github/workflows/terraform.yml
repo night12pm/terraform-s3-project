@@ -41,6 +41,6 @@ jobs:
            projectBaseDir: aws-secure-s3
            args: >
              -Dsonar.organization=night12pm-sonar-org
-             -Dsonar.projectKey=night12pm_terraform_s3_project
+             -Dsonar.projectKey=terraform_s3_project
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
