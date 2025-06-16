@@ -38,9 +38,9 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarcloud-github-action@v2
         with:
-          projectBaseDir: aws-secure-s3
-          args: >
-            -Dsonar.organization=scorpionking-sonar
-            -Dsonar.projectKey=terraform-s3-project
+           projectBaseDir: aws-secure-s3
+           args: >
+             -Dsonar.organization=night12pm-sonar-org
+             -Dsonar.projectKey=night12pm-sonar-key
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
